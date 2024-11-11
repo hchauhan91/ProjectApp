@@ -1,0 +1,25 @@
+@using (Html.BeginForm("Register", "Account", FormMethod.Post))
+{
+    <h2>Register</h2>
+
+    @if (ViewBag.Message != null)
+    {
+        <p style="color:red;">@ViewBag.Message</p>
+    }
+
+    <div>
+        <label for="username">Username:</label>
+        <input type="text" name="username" required />
+    </div>
+
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" name="password" required />
+    </div>
+
+    <button type="submit">Register</button>
+    
+    <p>Already have an account? 
+        <a href="@Url.Action("Login", "Account")">Login here</a>.
+    </p>
+}
